@@ -135,17 +135,13 @@ app.get('/videochat', function(req, res) {
     res.redirect('/videochat/'  + room + (req.param('p2p') ? ("?p2p=" + req.param('p2p')) : ""));
 });
 
-
+io.sockets.on('connection', socket);
+//Opentok routes
 
 app.use(app.router);
 
 //Bootstrap routes
 require('./lib/config/routes')(app);
-
-io.sockets.on('connection', socket);
-//Opentok routes
-
-
 
 // Start server
 var port = process.env.PORT || 3000;

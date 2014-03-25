@@ -38,8 +38,8 @@ angular.module('angularPassportApp', [
         templateUrl: 'partials/signup.html',
         controller: 'SignupCtrl'
       })
-      .when('/videochat/room', {
-        templateUrl: 'partials/videochat.html',
+      .when('/videochat/:room', {
+        templateUrl: 'room.ejs',
         controller: 'RoomCtrl'
       })
       .otherwise({
